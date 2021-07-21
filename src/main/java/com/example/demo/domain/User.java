@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +24,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter @Setter
 @Entity(name="user")
-public class User {
+public class User implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L; // (VARIAVEL DE CONTROLE) Verifica se o objeto recebido é compativel com a versão da classe utilizada durante a serialização 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
